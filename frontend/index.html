@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Authentication App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JWT Authentication App</h1>
+
+        <!-- Регистрация -->
+        <div class="form-section">
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username" required />
+            <input type="password" id="register-password" placeholder="Password" required />
+            <button class="btn" onclick="register()">Register</button>
+        </div>
+
+        <!-- Вход -->
+        <div class="form-section">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button class="btn" onclick="login()">Login</button>
+        </div>
+
+        <!-- Защищенные данные -->
+        <div class="form-section">
+            <h2>Access Protected Data</h2>
+            <button class="btn" onclick="getProtectedData()">Get Protected Data</button>
+            <p id="protected-message" class="message"></p>
+            <p><strong>JWT Token:</strong> <span id="jwt-token" class="message"></span></p>
+        </div>
+        
+    <script src="script.js"></script>
+    <script> console.log(token) </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* Общие стили для body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Центральный контейнер */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Секция формы */
+.form-section {
+    margin-bottom: 20px;
+}
+
+/* Группа ввода */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* Метка */
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Поле ввода */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+}
+
+/* Кнопка */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Сообщения */
+.message {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #444;
+    text-align: center;
+}
+
+/* JWT контейнер */
+.jwt-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Метка JWT */
+.jwt-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Поле для отображения JWT */
+.jwt-display-field {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #fafafa;
+    word-break: break-all;
+    white-space: pre-wrap;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: text;
+}
+
+.jwt-display-field:hover {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+}
