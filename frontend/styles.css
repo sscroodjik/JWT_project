@@ -66,9 +66,14 @@ h2 {
 }
 
 .input-field:focus {
-    border-color: #6a11cb;
+    border-color: #040cff;
     box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
 }
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
 
 /* Кнопка */
 .btn {
@@ -134,6 +139,6 @@ h2 {
 }
 
 .jwt-display-field:hover {
-    border-color: #6a11cb;
-    box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+    border-color: #2704ee;
+    box-shadow: 0 0 8px rgba(2, 29, 235, 0.2);
 }

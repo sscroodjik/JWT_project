@@ -26,14 +26,23 @@
             <button class="btn" onclick="login()">Login</button>
         </div>
 
-        <!-- Защищенные данные -->
-        <div class="form-section">
-            <h2>Access Protected Data</h2>
-            <button class="btn" onclick="getProtectedData()">Get Protected Data</button>
-            <p id="protected-message" class="message"></p>
-            <p><strong>JWT Token:</strong> <span id="jwt-token" class="message"></span></p>
-        </div>
-        
+        <button id="theme-toggle">Toggle Theme</button>
+        <script>
+            const toggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Загружаем тему
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+            }
+
+            toggleButton.addEventListener('click', () => {
+                body.classList.toggle('dark-theme');
+                localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark-theme' : '');
+            });
+        </script>
+
     <script src="script.js"></script>
     <script> console.log(token) </script>
 </body>

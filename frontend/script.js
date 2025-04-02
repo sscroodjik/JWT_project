@@ -1,5 +1,3 @@
-let token = null;
-
 async function register() {
     const username = document.getElementById('register-username').value;
     const password = document.getElementById('register-password').value;
@@ -10,8 +8,7 @@ async function register() {
         body: JSON.stringify({ username, password })
     });
 
-    const result = await response.json();
-    alert(result.message);
+    alert((await response.json()).message);
 }
 
 async function login() {
@@ -26,31 +23,35 @@ async function login() {
 
     const result = await response.json();
     if (response.ok) {
-        token = result.token;
         alert('Login successful!');
+        window.location.href = 'profile.html';
     } else {
         alert(result.message);
     }
 }
 
-async function getProtectedData() {
-    if (!token) {
-        alert('You need to login first!');
-        return;
-    }
-
-    const response = await fetch('/protected', {
-        method: 'GET',
-        headers: { 'Authorization': `Bearer ${token}` }
-    });
-
+async function getProfile() {
+    const response = await fetch('/profile');
     const result = await response.json();
-    if (response.ok) {
-        // Отображаем защищенные данные
-        document.getElementById('protected-message').innerText = result.message;
 
-        // Отображаем JWT-токен
-        document.getElementById('jwt-token').innerText = token;
+    if (response.ok) {
+        document.getElementById('profile-message').innerText = result.message;
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+
+async function logout() {
+    await fetch('/logout', { method: 'POST' });
+    window.location.href = 'index.html';
+}
+
+async function getData() {
+    const response = await fetch('/data');
+    const result = await response.json();
+
+    if (response.ok) {
+        document.getElementById('data-message').innerText = JSON.stringify(result.data);
     } else {
         alert(result.message);
     }
